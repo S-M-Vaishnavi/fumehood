@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.warming-up {
+  color: hsl(0, 0%, 28%);
+  font-size: x-large;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+      background-position: 0;
+  }
+  60% {
+      background-position: 600px;
+  }
+  100% {
+      background-position: 600px;
+  }
+}
+
+.arrow {
+  @apply border-gray-500 border-solid w-6 h-6 inline-block m-1.5;
+  border-width: 0 3px 3px 0;
+  margin: 0 2px;
+  transform: rotate(-135deg);
+  animation: shine 3s infinite linear, float 3s infinite ease-in-out;
+}
+
+@keyframes shine {
+  0% { border-color: gray; }
+  50% { border-color: lightgray; }
+  100% { border-color: gray; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-135deg); }
+  50% { transform: translateY(-10px) rotate(-135deg); }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 8px #0000FF, inset 0 0 8px #0000FF;
+  }
+  50% {
+    box-shadow: 0 0 16px #0000FF, inset 0 0 14px #0000FF;
+  }
+  100% {
+    box-shadow: 0 0 8px #0000FF, inset 0 0 8px #0000FF;
+  }
+}
+
+.inner {
+  box-shadow: 0 0 8px #0000FF, inset 0 0 8px #0000FF;
+  animation: pulse 2s linear infinite;
+}
+
+
+  .sensor {
+    background: #1E1E1E;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    width: 208px; 
+    height: 116px; 
+  }
+  
+  .sash {
+    background: #1E1E1E;
+    border: 2px solid #00FF00; 
+    border-radius: 10px;
+    padding: 10px;
+    margin: 7px;
+    width: 111px;
+    height: 212px; 
+  }
+
+  .custom-gradient-border {
+    border: 3px solid transparent;
+    border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.048) 0%, rgba(255, 255, 255, 0.012) 100%);
+    border-image-slice: 1;
+    border-radius: 10px;
+  }
+  
+  
