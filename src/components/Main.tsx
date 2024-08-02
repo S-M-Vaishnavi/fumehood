@@ -17,7 +17,7 @@ const Main = () => {
 
     useEffect(()=>{
         const timer = setTimeout(()=>{
-            navigate('/home');
+            navigate('/time');
         },10000);
 
         return () =>clearTimeout(timer);
@@ -25,13 +25,13 @@ const Main = () => {
 
     const [currentState, setCurrentState] = useState(0);
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentState((prev) => (prev + 1) % warmingUpStates.length);
-  }, 3000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentState((prev) => (prev + 1) % warmingUpStates.length);
+    }, 3000);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
 
   return (

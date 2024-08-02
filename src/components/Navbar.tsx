@@ -1,5 +1,5 @@
 import wifi from "../assets/Wifi.png";
-import server from "../assets/server.png";
+// import server from "../assets/server.png";
 
 import { useState, useEffect } from "react";
 
@@ -24,7 +24,7 @@ const Navbar = () => {
             <p className="text-2xl ml-2 mb-0 font-normal">{time}</p>
             <h3 className="text-3xl font-bold tracking-wide">FH-001</h3>
             <div className="flex items-center mr-2">
-                <img src={server} alt="server" className="w-[45px] h-[45px]" />
+                {/* <img src={server} alt="server" className="w-[45px] h-[45px]" /> */}
                 <img src={wifi} alt="WiFi" className="w-[31px] h-[32px]" />
             </div>
         </div>

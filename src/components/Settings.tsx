@@ -1,6 +1,5 @@
-import ExitSvg from "../svgAnimations/ExitSvg";
+import ExitSvg from "../svgIconsComponents/ExitSvgIcon";
 import Navbar from "./Navbar";
-import violetBg from '../assets/VoiletBg.png'
 import WifiSvg from "../svgIconsComponents/WifiSvg";
 import IsolationSvg from "../svgIconsComponents/IsolationSvg";
 import ExperimentSvg from "../svgIconsComponents/ExperimentSvg";
@@ -14,7 +13,6 @@ import CustomerSupportSvg from "../svgIconsComponents/CustomerSupportSvg";
 import { Link } from "react-router-dom";
 
 const Settings = () => {
- 
   return (
     <>
       <div className="w-[600px] h-[1024px] mx-auto custom-setting-gradient text-white relative overflow-hidden">
@@ -24,7 +22,6 @@ const Settings = () => {
           <div className="flex items-center justify-around">
             <div>
               <Link to='/home'><ExitSvg /></Link>
-              
             </div>
             <h1 className="text-center mr-[51px]">Settings</h1>
           </div>

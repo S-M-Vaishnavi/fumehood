@@ -31,7 +31,7 @@ const Home = () => {
       </div>
       <Navbar />
       <div className="flex items-center justify-between -mt-2 px-14">
-        <h3 className="text-white">Hi Victoria</h3>
+        <h3 className="text-white text-lg">Hi Victoria</h3>
         <div className="relative w-24 h-24">
           <div className="absolute inset-[1px] bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
           <div className="absolute inset-1 bg-white rounded-full flex items-center justify-center overflow-hidden">
@@ -43,7 +43,6 @@ const Home = () => {
       <SensorsDiv />
     
     {/* <div className="relative">
-    
       <div className={`absolute bottom-0 w-full transition-transform duration-300 ${isMenuOpen ? 'transform translate-y-0' : 'transform translate-y-[110px]'}`}>
         <div className="w-full h-[110px] bg-custom-gray flex items-center justify-around px-4 rounded-tl-[50px] rounded-tr-[50px] relative">
           <img src={VolumeX} alt="Volume X" className="w-[40px] h-[42px]" />
