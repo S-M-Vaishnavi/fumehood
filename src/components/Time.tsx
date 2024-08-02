@@ -17,10 +17,21 @@ const Time = () => {
     const [selectedDateFormat, setSelectedDateFormat] = useState("DD/MM/YYYY");
 
     const handleDropdownClick = (dropdown: string) => {
-        setIsOpenTimeZone(dropdown === 'timeZone');
-        setIsOpenTimeFormat(dropdown === 'timeFormat');
-        setIsOpenDateFormat(dropdown === 'dateFormat');
+        if (dropdown === 'timeZone') {
+            setIsOpenTimeZone(!isOpenTimeZone);
+            setIsOpenTimeFormat(false);
+            setIsOpenDateFormat(false);
+        } else if (dropdown === 'timeFormat') {
+            setIsOpenTimeFormat(!isOpenTimeFormat);
+            setIsOpenTimeZone(false);
+            setIsOpenDateFormat(false);
+        } else if (dropdown === 'dateFormat') {
+            setIsOpenDateFormat(!isOpenDateFormat);
+            setIsOpenTimeZone(false);
+            setIsOpenTimeFormat(false);
+        }
     };
+    
 
     const handleSelectChange = (type: string, value: SetStateAction<string>) => {
         if (type === 'timeZone') setSelectedTimeZone(value);
@@ -132,8 +143,8 @@ const Time = () => {
             <div className="absolute bottom-0 w-full px-4 py-2">
                 <div className="grid grid-cols-1 grid-flow-col items-center justify-between">
                     <div className="flex justify-center">
-                        <div className="flex flex-col items-center cursor-pointer">
-                            <i className="arrow mb-1" />
+                        <div className="flex flex-col items-center cursor-pointer ml-20">
+                            <i className="arrow" />
                             <i className="arrow" />
                         </div>
                     </div>

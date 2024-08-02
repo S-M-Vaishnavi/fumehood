@@ -64,40 +64,39 @@
   animation: pulse 2s linear infinite;
 }
 
-
-  .sensor {
-    background: #1E1E1E;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px;
-    width: 208px; 
-    height: 116px; 
-  }
+.sensor {
+  background: #1E1E1E;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  width: 208px; 
+  height: 116px; 
+}
   
-  .sash {
-    background: #1E1E1E;
-    border: 2px solid #00FF00; 
-    border-radius: 10px;
-    padding: 10px;
-    margin: 7px;
-    width: 111px;
-    height: 212px; 
-  }
+.sash {
+  background: #1E1E1E;
+  border: 2px solid #00FF00; 
+  border-radius: 10px;
+  padding: 10px;
+  margin: 7px;
+  width: 111px;
+  height: 212px; 
+}
 
-  .custom-gradient-border {
-    border: 3px solid transparent;
-    border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.048) 0%, rgba(255, 255, 255, 0.012) 100%);
-    border-image-slice: 1;
-    border-radius: 10px;
-  }
-  
-  .custom-setting-gradient{
-      background-color: #16171b;;
-      background-image:
-        radial-gradient(
-          circle at bottom right,
-          #44396e,
-          #16171b 50%
-        );
-  }
+.custom-gradient-border {
+  border: 3px solid transparent;
+  border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.048) 0%, rgba(255, 255, 255, 0.012) 100%);
+  border-image-slice: 1;
+  border-radius: 10px;
+}
+
+.custom-setting-gradient{
+    background-color: #16171b;;
+    background-image:
+      radial-gradient(
+        circle at bottom right,
+        #44396e,
+        #16171b 50%
+      );
+}
   
