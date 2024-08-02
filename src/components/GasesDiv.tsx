@@ -77,7 +77,7 @@ const GasesDiv = () => {
                 {/* Post-Purge Mode */}
                 <div className='rounded-[50px] bg-[#2C2C2E] w-[128px] h-[260px]'>
                     <div className='flex mt-20'>
-                        <img src={noGas} alt="noGas" className="w-[58px] h-[59px] mr-2" />
+                        <img src={noGas} alt="noGas" className="w-[58px] h-[59px] ml-2" />
                         <img src={fan} alt="fan" className="w-[56px] h-[56px]" />
                     </div>
                     <p className="text-white font-bold text-xl p-3 text-center pb-0">Post - Purge</p>

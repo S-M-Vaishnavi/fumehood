@@ -49,18 +49,18 @@
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 8px #0000FF, inset 0 0 8px #0000FF;
+    box-shadow: 0 0 8px #0A57a2, inset 0 0 14px #0A57a2;
   }
   50% {
-    box-shadow: 0 0 16px #0000FF, inset 0 0 14px #0000FF;
+    box-shadow: 0 0 16px #0A57a2, inset 0 0 14px #0A57a2;
   }
   100% {
-    box-shadow: 0 0 8px #0000FF, inset 0 0 8px #0000FF;
+    box-shadow: 0 0 8px #0A57a2, inset 0 0 14px #0A57a2;
   }
 }
 
 .inner {
-  box-shadow: 0 0 8px #0000FF, inset 0 0 8px #0000FF;
+  box-shadow: 0 0 8px #0A57a2, inset 0 0 14px #0A57a2;
   animation: pulse 2s linear infinite;
 }
 
@@ -91,4 +91,13 @@
     border-radius: 10px;
   }
   
+  .custom-setting-gradient{
+      background-color: #16171b;;
+      background-image:
+        radial-gradient(
+          circle at bottom right,
+          #44396e,
+          #16171b 50%
+        );
+  }
   

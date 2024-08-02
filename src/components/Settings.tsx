@@ -17,7 +17,7 @@ const Settings = () => {
  
   return (
     <>
-      <div className="w-[600px] h-[1024px] mx-auto bg-richBlack text-white relative overflow-hidden">
+      <div className="w-[600px] h-[1024px] mx-auto custom-setting-gradient text-white relative overflow-hidden">
         <Navbar />
 
         <div className="w-[480px] h-[43px]">
@@ -44,9 +44,12 @@ const Settings = () => {
                   {item.icon}
                 </p>
               </div>
+              <div>
               <p className="font-bold text-lg mt-3 text-center w-full break-words">
                 {item.label}
               </p>
+              </div>
+             
             </div>
           ))}
         </div>
@@ -119,10 +122,7 @@ const Settings = () => {
             </div>
           </div>
         </div>
-
-        <div className="absolute right-0 bottom-0">
-          <img src={violetBg} alt="violetBg" />
-        </div>
+        <div className="absolute right-0 bottom-0  pointer-events-none bg-gradient-to-tl from-[#9f87ff] to-transparent" />
       </div>
 
     </>

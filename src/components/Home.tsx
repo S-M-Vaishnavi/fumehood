@@ -42,9 +42,9 @@ const Home = () => {
       <GasesDiv />
       <SensorsDiv />
     
-    <div className="relative">
-      {/* Main Menu Bar */}
-      <div className={`absolute bottom-[-43px] w-full transition-transform duration-300 ${isMenuOpen ? 'transform translate-y-0' : 'transform translate-y-[110px]'}`}>
+    {/* <div className="relative">
+    
+      <div className={`absolute bottom-0 w-full transition-transform duration-300 ${isMenuOpen ? 'transform translate-y-0' : 'transform translate-y-[110px]'}`}>
         <div className="w-full h-[110px] bg-custom-gray flex items-center justify-around px-4 rounded-tl-[50px] rounded-tr-[50px] relative">
           <img src={VolumeX} alt="Volume X" className="w-[40px] h-[42px]" />
           <div className="relative">
@@ -59,21 +59,61 @@ const Home = () => {
           </div>
           <img src={rectangle} alt="Rectangle" className="w-[40px] h-[42px]" />
           <img src={light} alt="Light" className="w-[40px] h-[42px]" />
-          {/* Extra Icons */}
           {isMenuOpen && (
-            <div className="absolute bottom-[-45px] w-full flex items-center justify-around px-4 py-2 bg-custom-gray transition-transform duration-300">
+          <div>
+            <div>
               <img src={volumeOn} alt="volumeOn" className="w-[40px] h-[42px]" />
               <img src={moon} alt="moon" className="w-[40px] h-[42px]" />
               <Link to='/settings'>
                 <img src={settings} alt="settimgs" className="w-[40px] h-[42px]" />
               </Link>
               <img src={jar} alt="jar" className="w-[40px] h-[42px]" />
-              <img src={purge} alt="purge" className="w-[40px] h-[42px]" />
             </div>
+            <div>
+              <img src={purge} alt="" className="w-[40px] h-[42px]"/>
+            </div>
+          </div>
+          
           )}
         </div>
       </div>
-    </div>
+    </div> */}
+
+<div className="absolute bottom-0 w-full">
+        {/* Main Menu Bar */}
+        <div className={`w-full transition-transform duration-300 ${isMenuOpen ? 'transform translate-y-0' : 'transform'}`}>
+          <div className="w-full bg-custom-gray rounded-tl-[50px] rounded-tr-[50px] flex flex-col items-center pb-4">
+            <div className="flex justify-around w-full py-2">
+              <img src={VolumeX} alt="Volume X" className="w-[40px] h-[42px]" />
+              <img src={lockSash} alt="Lock Sash" className="w-[40px] h-[42px]" />
+              <div className="flex flex-col items-center cursor-pointer" onClick={openMenu}>
+                <div className="arrow" />
+                <div className="arrow" />
+                <img src={homeIcon} alt="Home Icon" className="w-[40px] h-[42px]" />
+              </div>
+              <img src={rectangle} alt="Rectangle" className="w-[40px] h-[42px]" />
+              <img src={light} alt="Light" className="w-[40px] h-[42px]" />
+            </div>
+            {/* Extra Icons */}
+            {isMenuOpen && (
+              <div className="w-full pt-2">
+                <div className="flex justify-around w-full gap-4">
+                  <img src={volumeOn} alt="Volume On" className="w-[40px] h-[42px]" />
+                  <img src={moon} alt="Moon" className="w-[40px] h-[42px]" />
+                  <Link to='/settings'>
+                    <img src={settings} alt="Settings" className="w-[40px] h-[42px]" />
+                  </Link>
+                  <img src={jar} alt="Jar" className="w-[40px] h-[42px]" />
+                </div>
+                <div className="flex justify-around w-full pt-2">
+                  <img src={purge} alt="Purge" className="w-[40px] h-[42px]" />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
     </div>
   </>
   
