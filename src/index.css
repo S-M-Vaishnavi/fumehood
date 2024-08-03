@@ -99,4 +99,26 @@
         #16171b 50%
       );
 }
-  
+
+.dropdown-item {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.circle-shadow {
+  position: relative;
+}
+
+.circle-shadow::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 172, 255, 0.7), rgba(0, 123, 255, 0.5));
+  filter: blur(10px);
+  z-index: -1;
+}

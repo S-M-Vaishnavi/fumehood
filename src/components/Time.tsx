@@ -31,7 +31,7 @@ const Time = () => {
             setIsOpenTimeFormat(false);
         }
     };
-    
+
 
     const handleSelectChange = (type: string, value: SetStateAction<string>) => {
         if (type === 'timeZone') setSelectedTimeZone(value);
@@ -62,26 +62,55 @@ const Time = () => {
                 </div>
 
                 <div className="relative">
-                    <div className="flex bg-transparent text-white text-lg items-center cursor-pointer justify-between w-[328px] h-[33px] rounded-lg border border-white mx-auto mt-[15px] p-2" onClick={() => handleDropdownClick('timeZone')}>
-                        <span className="flex-1 text-left">{selectedTimeZone}</span>
-                        <motion.div className="ml-2" animate={{ rotate: isOpenTimeZone ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                    <div
+                        className="flex bg-transparent text-white text-lg items-center cursor-pointer justify-between w-[328px] h-[33px] rounded-lg border border-white mx-auto mt-[15px] p-2"
+                        onClick={() => handleDropdownClick('timeZone')}
+                    >
+                        <span className="flex-1 text-left dropdown-item">{selectedTimeZone}</span>
+                        <motion.div
+                            className="ml-2"
+                            animate={{ rotate: isOpenTimeZone ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
                             <DropDownSvg />
                         </motion.div>
                     </div>
                     {isOpenTimeZone && (
-                        <motion.ul initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }} className="absolute mt-2 bg-gray-800 rounded shadow-lg text-white w-full">
-                            <li className="p-2 hover:bg-gray-700 cursor-pointer" onClick={() => handleSelectChange('timeZone', "GMT +05:30 Indian Standard Time")}>
+                        <motion.ul
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                            className="absolute mt-2 bg-gray-800 rounded shadow-lg text-white w-full"
+                        >
+                            <li
+                                className="p-2 cursor-pointer dropdown-item"
+                                onClick={() =>
+                                    handleSelectChange('timeZone', 'GMT +05:30 Indian Standard Time')
+                                }
+                            >
                                 GMT +05:30 Indian Standard Time
                             </li>
-                            <li className="p-2 hover:bg-gray-700 cursor-pointer" onClick={() => handleSelectChange('timeZone', "GMT +01:00 Central European Time")}>
+                            <li
+                                className="p-2 cursor-pointer dropdown-item"
+                                onClick={() =>
+                                    handleSelectChange('timeZone', 'GMT +01:00 Central European Time')
+                                }
+                            >
                                 GMT +01:00 Central European Time
                             </li>
-                            <li className="p-2 hover:bg-gray-700 cursor-pointer" onClick={() => handleSelectChange('timeZone', "GMT +00:00 Greenwich Mean Time")}>
+                            <li
+                                className="p-2 cursor-pointer dropdown-item"
+                                onClick={() =>
+                                    handleSelectChange('timeZone', 'GMT +00:00 Greenwich Mean Time')
+                                }
+                            >
                                 GMT +00:00 Greenwich Mean Time
                             </li>
                         </motion.ul>
                     )}
                 </div>
+
             </div>
 
             <div className="w-[393px] h-[135px] rounded-2xl bg-[#000000] mx-auto mt-12">
@@ -115,7 +144,7 @@ const Time = () => {
             <div className="w-[393px] h-[135px] rounded-2xl bg-[#000000] mx-auto mt-12">
                 <div className="pt-4 ml-[32px]">
                     <div className="flex items-center">
-                        <DateIconSvg/>
+                        <DateIconSvg />
                         <p className="font-semibold text-[20px] ml-16 mb-0">Date Format</p>
                     </div>
                 </div>
@@ -150,9 +179,9 @@ const Time = () => {
                     </div>
                     <div className="flex justify-end">
                         <Link to='/wifi'>
-                        <button className="w-[110px] h-[37px] rounded-3xl bg-gray-500">
-                            <p className="font-semibold text-lg text-center my-auto text-white">Confirm</p>
-                        </button>
+                            <button className="w-[110px] h-[37px] rounded-3xl bg-gray-500">
+                                <p className="font-semibold text-lg text-center my-auto text-white">Confirm</p>
+                            </button>
                         </Link>
                     </div>
                 </div>
