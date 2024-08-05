@@ -5,10 +5,14 @@ import PasswordShieldIconSvg from "../svgIconsComponents/PasswordShieldIconSvg";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import DropDownSvg from "../svgIconsComponents/DropDownSvg";
+import { SvgSpinnersWifi } from "../svgIconsComponents/WifiSvgAnimation";
 import WifiSvg from "../svgIconsComponents/WifiSvg";
+import WifiNotConnectedSvg from "../svgIconsComponents/WifiNotConnectedSvg";
+import WifiConnectedNoInternetSvg from "../svgIconsComponents/WifiConnectedNoInternetSvg";
 
 const Wifi = () => {
     const [isOn, setIsOn] = useState(false);
+    const [passwordVisible, setPasswordVisible] = useState(false);
 
     const handleToggle = () => {
         setIsOn(!isOn);
@@ -23,6 +27,7 @@ const Wifi = () => {
 
     const handleSelectChange = (value: string) => {
         setSelectedWifiPorts(value);
+        setIsOpenWifiFormat(false);
         handleDropdownClick();
     };
 
@@ -39,41 +44,49 @@ const Wifi = () => {
                 <div></div>
             </div>
 
-            <div className="flex items-center mt-8 ">
-            <div className="w-[217px] h-[217px] rounded-full bg-[#001123] mx-auto border-blue-20 relative shadow-[-20px_-20px_50px_rgb(9,9,121,.5),-20px_-20px_80px_rgb(9,9,121,.1),0_0_50px_rgb(19,93,236)]">
-            <div className=" w-[152px] h-[152px] bg-transparent inner relative rounded-full top-[30px] left-[30px]">
-                <p className="m-0 w-[150px] h-[150px] bg-[#001123] rounded-full flex items-center justify-center">
-                    <WifiSvg/>
-                </p>
-            </div>
+            <div className="flex items-center mt-8">
+                <div className="w-[217px] h-[217px] rounded-full mx-auto border-blue-20 relative shadow-[-20px_-20px_50px_rgb(9,9,121,.5),-20px_-20px_80px_rgb(9,9,121,.1),0_0_50px_rgb(19,93,236)]" style={{ background: 'linear-gradient(180deg, #131A33 0%, rgba(19, 26, 51, 0.8) 100%)' }}>
+                    <div className="absolute top-[30px] left-[30px] w-[152px] h-[152px] bg-transparent rounded-full flex items-center justify-center z-10">
+                        <div className="m-0 w-[152px] h-[152px] bg-[#001123] rounded-full flex items-center justify-center">
+                            <div className="absolute w-[130px] h-[130px] border-4 border-crimson rounded-full flex justify-center items-center">
+                                {/* <SvgSpinnersWifi /> */}
+                                <WifiSvg/>
+                                {/* <WifiNotConnectedSvg/> */}
+                                {/* <WifiConnectedNoInternetSvg/> */}
+                                <div className="w-[3px] h-[3px] bg-green-500 absolute bottom-[-2px] rounded-full shadow-[0_0_3px_3px_rgba(0,255,0,.8)]"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
-            </div>
-            <div className="mx-auto flex flex-col items-center">
+            <div className="w-[80%] mx-auto flex flex-col mt-8">
                 <div className="flex flex-col">
                     <p className="font-semibold text-[22px] mb-2">Wi-Fi</p>
-                    <div className="w-[116px] h-[42px] rounded-[56px] bg-[#444252] mb-4">
-                        <div onClick={handleToggle} className={`w-[116px] h-[42px] rounded-full p-1 cursor-pointer flex items-center justify-around transition-colors duration-300 ${isOn ? 'bg-gradient-to-r from-[#5A31FE] to-[#3161FE]' : 'bg-[#444252]'}`}>
-                            <span className={`text-white transition-opacity duration-300 ${isOn ? 'ml-14' : 'ml-2'}`}>
+                    <div className="relative inline-block w-[30%] h-[42px] rounded-[56px] bg-[#444252] mb-4">
+                        <input type="checkbox" id="toggle" className="sr-only" checked={isOn} onChange={handleToggle}/>
+                          <label htmlFor="toggle" className={`block w-full h-full rounded-full transition-colors duration-400 ${isOn ? 'bg-[#444252]' : 'bg-[#444252]'}`}>
+                            <span className={`block w-[40px] h-[40px] bg-gradient-to-r from-[#3161FE] to-[#5A31FE] rounded-full absolute top-[1px] left-[2px] transition-transform duration-400 ${isOn ? 'translate-x-[71px]' : 'translate-x-0'}`}/>
+                            <span className={`absolute inset-0 flex items-center justify-${isOn ? 'between' : 'center'} text-xs font-bold uppercase text-white transition-all duration-400`} style={{ paddingLeft: isOn ? '8px' : '26px' }} >
                                 {isOn ? 'Enable' : 'Disable'}
                             </span>
-                            <div className={`w-[37px] h-[37px] rounded-full bg-gradient-to-r from-[#3161FE] to-[#5A31FE] transition-transform duration-300 ${isOn ? 'transform translate-x-[-59px]' : 'transform translate-x-0'}`} />
-                        </div>
+                          </label>
                     </div>
                 </div>
 
-                <div className="w-[377px] h-[180px]">
-                    <div className="w-[375px] h-[82px] rounded-[12px] bg-[#444252] p-[15px]">
+                <div>
+                    <div className="h-[82px] rounded-[12px] bg-[#444252] p-[15px]">
                         <p className="text-xl font-semibold text-gray-400 mb-0">SSID</p>
                         <div className="relative">
-                            <div className="flex bg-transparent text-white text-lg items-center cursor-pointer justify-between w-[328px] h-[33px]" onClick={handleDropdownClick}>
+                            <div className="flex bg-transparent text-white text-lg items-center cursor-pointer justify-between h-[33px]" onClick={handleDropdownClick}>
                                 <span className="text-center">{selectedWifiPorts}</span>
                                 <motion.div className="ml-2" animate={{ rotate: isOpenWifiFormat ? 180 : 0 }} transition={{ duration: 0.3 }}>
                                     <DropDownSvg />
                                 </motion.div>
                             </div>
                             {isOpenWifiFormat && (
-                                <motion.ul initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }} className="absolute mt-2 bg-gray-800 rounded shadow-lg text-white w-full">
+                                <motion.ul initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }} className="absolute mt-2 bg-gray-800 rounded shadow-lg text-white w-full" style={{ zIndex: 1000 }}>
                                     <li className="p-2 hover:bg-gray-700 cursor-pointer" onClick={() => handleSelectChange('Canaries- 5G')}>
                                         Canaries- 5G
                                     </li>
@@ -84,7 +97,7 @@ const Wifi = () => {
                             )}
                         </div>
                     </div>
-                    <div className="w-[375px] h-[82px] rounded-[12px] bg-[#444252] mt-3 p-[15px] flex items-center justify-between">
+                    <div className="h-[82px] rounded-[12px] bg-[#444252] mt-3 p-[15px] flex items-center justify-between">
                         <div>
                             <p className="text-xl font-semibold text-gray-400 mb-0">Password</p>
                             <div className="relative">
@@ -93,10 +106,12 @@ const Wifi = () => {
                                 </div>
                             </div>
                         </div>
-                        <PasswordShieldIconSvg />
+                        <button className="absolute right-0 pr-2" onClick={() => setPasswordVisible(!passwordVisible)}>
+                            {/* {passwordVisible ? <EyeOffIcon className="w-6 h-6 text-white" /> : <EyeIcon className="w-6 h-6 text-white" />} */}
+                        </button>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div className="absolute bottom-0 w-full px-4 py-2">
                 <div className="grid grid-cols-1 grid-flow-col items-center justify-between">
                     <div className="flex justify-center">

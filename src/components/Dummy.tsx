@@ -9,7 +9,13 @@
 
         {/* <img src={bottomGradient} alt="bottomGradient" className="w-full mt-6" /> */}
 
+import React, { useState } from 'react';
 const Dummy = () => {
+  const [isOn, setIsOn] = useState(false);
+
+  const handleToggle = () => {
+    setIsOn(!isOn);
+  };
   return (
     <div>
         {/* menu bar */}
@@ -307,6 +313,22 @@ const Dummy = () => {
 //   { value: "Pacific/Fiji", label: "(GMT+12:00) Fiji, Kamchatka, Marshall Is." },
 //   { value: "Pacific/Tongatapu", label: "(GMT+13:00) Nuku'alofa" }
 // ]; */}
+
+<div className="flex items-center space-x-2">
+      <span className="text-gray-700">{isOn ? 'On' : 'Off'}</span>
+      <div
+        className={`w-16 h-8 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+          isOn ? 'bg-green-500' : ''
+        }`}
+        onClick={handleToggle}
+      >
+        <div
+          className={`bg-white w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ${
+            isOn ? 'translate-x-8' : ''
+          }`}
+        />
+      </div>
+    </div>
     </div>
   )
 }
